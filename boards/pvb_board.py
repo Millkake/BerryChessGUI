@@ -107,6 +107,7 @@ class PlayerVsBotBoard(ChessBoard):
             self.save_game(
                 r'saves/pvb_games/' + 'pvs_save_' + str(len(os.listdir(r'saves/pvb_games/')) + 1) + '.json'
             )
+            self.move_log = []
             pg.display.flip()
             while True:
                 for event in pg.event.get():

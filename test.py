@@ -1,5 +1,4 @@
-import os
+import json
 
-os.makedirs('saves/pvs_games', exist_ok=True)
-os.makedirs('saves/pvb_games', exist_ok=True)
-os.makedirs('saves/pvp_games', exist_ok=True)
+with open(r'saves/pvs_games/pvs_save_1.json', 'r') as f:
+    print(json.load(f))

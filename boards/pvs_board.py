@@ -103,6 +103,7 @@ class PlayerVsSelfBoard(ChessBoard):
             self.save_game(
                 r'saves/pvs_games/' + 'pvs_save_' + str(len(os.listdir(r'saves/pvs_games/')) + 1) + '.json'
             )
+            self.move_log = []
             pg.display.flip()
             while True:
                 for event in pg.event.get():
@@ -126,6 +127,11 @@ class PlayerVsSelfBoard(ChessBoard):
         self.show_possible_moves(self.current_selected, window)
         self.highlight_selected(window)
         draw_text(10, 10, 30, f"Turn: {self.turn.capitalize()}", window)
+
+        keys = pg.key.get_just_pressed()
+        if keys[pg.K_s]:
+            self.save_game(path=r'saves/pvs_games/' + 'pvs_save_' + str(len(os.listdir(r'saves/pvs_games/')) + 1) + '.json')
+
         
 
 

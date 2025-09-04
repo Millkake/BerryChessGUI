@@ -2,6 +2,7 @@ import pygame as pg
 from pieces import Pawn, Rook, Knight, Bishop, Queen, King
 from utils.spritesheet import Spritesheet
 from utils.standard_values import *
+import os
 
 import json
 
@@ -114,7 +115,7 @@ class ChessBoard:
         with open(path, 'w') as f:
             json.dump(self.move_log, f)
 
-        self.move_log = []
+        
 
 
     def render(self, window):
@@ -127,4 +128,5 @@ class ChessBoard:
                     target.render(window, self.topleft)
                 else:
                     continue
+
 
